@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import '../styles/signin.module.css';
 import Link from 'next/link';
+import Navbar from "./components/navbar";
 
 export default function Home() {
 
@@ -45,6 +46,7 @@ console.log(user,"user========")
     return (
       <>
       <div className="Sdiv1">
+        <Navbar/>
             <div className="Sdiv2">
                 <div  className="Sdiv3">
                 <button className="Sbutton1">Sign Up</button>

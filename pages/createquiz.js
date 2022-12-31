@@ -173,77 +173,120 @@ export default function CreateQuiz() {
       },
       body: JSON.stringify({
         createdBy,
-        "question1.question": question1_question,
-        "question1.answer": question1_answer,
-        "question1.difficultyLevel": question1_level,
-        "question1.option.first": question1_option1,
-        "question1.option.second": question1_option2,
-        "question1.option.third": question1_option3,
-        "question1.option.forth": question1_option4,
-        "question2.question": question2_question,
-        "question2.answer": question2_answer,
-        "question2.difficultyLevel": question2_level,
-        "question2.option.first": question2_option1,
-        "question2.option.second": question2_option2,
-        "question2.option.third": question2_option3,
-        "question2.option.forth": question2_option4,
-        "question3.question": question3_question,
-        "question3.answer": question3_answer,
-        "question3.difficultyLevel": question3_level,
-        "question3.option.first": question3_option1,
-        "question3.option.second": question3_option2,
-        "question3.option.third": question3_option3,
-        "question3.option.forth": question3_option4,
-        "question4.question": question4_question,
-        "question4.answer": question4_answer,
-        "question4.difficultyLevel": question4_level,
-        "question4.option.first": question4_option1,
-        "question4.option.second": question4_option2,
-        "question4.option.third": question4_option3,
-        "question4.option.forth": question4_option4,
-        "question5.question": question5_question,
-        "question5.answer": question5_answer,
-        "question5.difficultyLevel": question5_level,
-        "question5.option.first": question5_option1,
-        "question5.option.second": question5_option2,
-        "question5.option.third": question5_option3,
-        "question5.option.forth": question5_option4,
-        "question6.question": question6_question,
-        "question6.answer": question6_answer,
-        "question6.difficultyLevel": question6_level,
-        "question6.option.first": question6_option1,
-        "question6.option.second": question6_option2,
-        "question6.option.third": question6_option3,
-        "question6.option.forth": question6_option4,
-        "question7.question": question7_question,
-        "question7.answer": question7_answer,
-        "question7.difficultyLevel": question7_level,
-        "question7.option.first": question7_option1,
-        "question7.option.second": question7_option2,
-        "question7.option.third": question7_option3,
-        "question7.option.forth": question7_option4,
-        "question8.question": question8_question,
-        "question8.answer": question8_answer,
-        "question8.difficultyLevel": question8_level,
-        "question8.option.first": question8_option1,
-        "question8.option.second": question8_option2,
-        "question8.option.third": question8_option3,
-        "question8.option.forth": question8_option4,
-        "question9.question": question9_question,
-        "question9.answer": question9_answer,
-        "question9.difficultyLevel": question9_level,
-        "question9.option.first": question9_option1,
-        "question9.option.second": question9_option2,
-        "question9.option.third": question9_option3,
-        "question9.option.forth": question9_option4,
-        "question10.question": question10_question,
-        "question10.answer": question10_answer,
-        "question10.difficultyLevel": question10_level,
-        "question1.option.first": question10_option1,
-        "question10.option.second": question10_option2,
-        "question10.option.third": question10_option3,
-        "question10.option.forth": question10_option4,
-      }),
+        question:[
+            {
+                question:question1_question,
+                option:{
+                    first:question1_option1,
+                    second:question1_option2,
+                    third:question1_option3,
+                    forth:question1_option4
+                },
+                answer:question1_answer,
+                difficultyLevel:question1_level
+            },
+            {
+                question:question2_question,
+                option:{
+                    first:question2_option1,
+                    second:question2_option2,
+                    third:question2_option3,
+                    forth:question2_option4
+                },
+                answer:question2_answer,
+                difficultyLevel:question2_level
+            },
+            {
+                question:question3_question,
+                option:{
+                    first:question3_option1,
+                    second:question3_option2,
+                    third:question3_option3,
+                    forth:question3_option4
+                },
+                answer:question3_answer,
+                difficultyLevel:question3_level
+            },
+            {
+                question:question4_question,
+                option:{
+                    first:question4_option1,
+                    second:question4_option2,
+                    third:question4_option3,
+                    forth:question4_option4
+                },
+                answer:question4_answer,
+                difficultyLevel:question4_level
+            },
+            {
+                question:question5_question,
+                option:{
+                    first:question5_option1,
+                    second:question5_option2,
+                    third:question5_option3,
+                    forth:question5_option4
+                },
+                answer:question5_answer,
+                difficultyLevel:question5_level
+            },
+            {
+                question:question6_question,
+                option:{
+                    first:question6_option1,
+                    second:question6_option2,
+                    third:question6_option3,
+                    forth:question6_option4
+                },
+                answer:question6_answer,
+                difficultyLevel:question6_level
+            },
+            {
+                question:question7_question,
+                option:{
+                    first:question7_option1,
+                    second:question7_option2,
+                    third:question7_option3,
+                    forth:question7_option4
+                },
+                answer:question7_answer,
+                difficultyLevel:question7_level
+            },
+            {
+                question:question8_question,
+                option:{
+                    first:question8_option1,
+                    second:question8_option2,
+                    third:question8_option3,
+                    forth:question8_option4
+                },
+                answer:question8_answer,
+                difficultyLevel:question8_level
+            },
+            {
+                question:question9_question,
+                option:{
+                    first:question9_option1,
+                    second:question9_option2,
+                    third:question9_option3,
+                    forth:question9_option4
+                },
+                answer:question9_answer,
+                difficultyLevel:question9_level
+            },
+            {
+                question:question10_question,
+                option:{
+                    first:question10_option1,
+                    second:question10_option2,
+                    third:question10_option3,
+                    forth:question10_option4
+                },
+                answer:question10_answer,
+                difficultyLevel:question10_level
+            }
+        ]
+   
+       }),
     });
     console.log(res, "res==========");
     const data = await res.json();

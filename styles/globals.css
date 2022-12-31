@@ -549,3 +549,36 @@ transition:all 0.2s;
   padding: 10px;
   background-color: #000;
 }
+
+/* play */
+
+.mainquizdivPlay{
+  padding: 10px;
+  background-color: #000;
+}
+
+.quizDivPlay{
+  padding: 20px 70px 20px 20px;
+  margin: 0px 80px 30px 90px;
+  background-image: linear-gradient(
+    rgb(9, 34, 74),white,rgb(21, 39, 85)
+  );
+}
+
+.quizfirst1Play{
+  background-color: rgb(80, 131, 152);
+  padding: 30px 30px 30px 30px;
+  width: 103%;
+  border-width: 0px;
+  border-radius: 10px;
+}
+
+.questionPlay{
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
+.optionPlay{
+  font-size: 20px;
+  padding-top: 5px;
+}

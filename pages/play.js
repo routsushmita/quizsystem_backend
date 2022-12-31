@@ -1,76 +1,71 @@
+import Navbar from "./components/navbar";
+import React, { useState, useEffect } from "react";
+import '../styles/play.module.css'
+
 export default function Home() {
+  const [question, setquestion] = useState();
+  useEffect(() => {
+    PostData();
+  }, []);
+  const PostData = async () => {
+    const res = await fetch("/api/question", {
+      method: "get",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(res.body, "res============");
+    const data = await res.json();
+    if (!res) {
+      setquestion([]);
+    } else {
+      setquestion(data[0].question);
+    }
+    console.log(data, "data========");
+  };
+
+  console.log(question, "question========");
   return (
     <>
-     <div className="nav nav_black">
-            <div className="nav_contents">
-                <img 
-                className="nav_logo" 
-                src="https://png.pngtree.com/png-clipart/20210418/original/pngtree-quiz-logo-icon-vector-png-image_6234100.jpg"
-                />
-                <img 
-                className="nav_avtar" 
-                src="https://i.pinimg.com/originals/0d/dc/ca/0ddccae723d85a703b798a5e682c23c1.png"
-                />
-            </div>
-     </div>
+      <Navbar />
 
-        <div className="Baner"
+      <div
+        className="Baner"
         style={{
-            backgroundSize: "cover",
-            backgroundImage: `url("https://img.freepik.com/premium-vector/neon-icon-quiz-blue-banner-3d-style-white-background-vector-illustration_123447-1788.jpg?w=2000")`,
-            backgroundPosition:"center center"
-        }}>
-            <div className="banner_contents">
-                {/* <h1 className="banner_title">Play Quiz</h1> */}
-                {/* <div className="banner_buttons"> */}
-                    {/* <button className="banner_button">Play</button> */}
-                    {/* <button className="banner_button">Create</button> */}
-                {/* </div> */}
-                {/* <h1 className="banner_description">
-                    {truncate(`This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description.`
-                    ,150) } 
-                </h1> */}
-                {/* <div className="banner--fadebotton"/> */}
-            </div> 
+          backgroundSize: "cover",
+          backgroundImage: `url("https://img.freepik.com/premium-vector/neon-icon-quiz-blue-banner-3d-style-white-background-vector-illustration_123447-1788.jpg?w=2000")`,
+          backgroundPosition: "center center",
+        }}
+      ></div>
+
+      <div className="welcome">
+        <div className="Heading">
+          <span className="moving_Heading">Welcome to Quiz Center</span>
         </div>
+      </div>
 
-        <div className="welcome">
-            <div className="Heading">
-                <span className="moving_Heading">Welcome to Quiz Center</span>
-            </div>
-        </div>
-
-        
-
-        <div className="mainquizdiv">
-            
-            <div className="quizDiv">
-                <div className="quizfirst1">
+      {question?.map((item, index) => {
+        return (
+          <div className="mainquizdivPlay">
+            <div className="quizDivPlay">
+              <div className="quizfirst1Play">
                 <div>
-                    <div className="question">
-                        <span>What is your name?</span>
-                    </div>
-                    <div className="option">
-                        <input type='radio'/> <label> Raju</label>
-                        <input type='radio'/> <label> Golu</label>
-                        <input type='radio'/> <label> Siya</label>
-                        <input type='radio'/> <label> Juggu</label>
-                    </div>
-                    <div>
-                    <button className="button_student">Student</button>
-                    </div>
+                  <div className="questionPlay">
+                    <span>{item.question}</span>
+                  </div>
+                  <div className="optionPlay">
+                    <input type="radio" /> <label> {item.option.first}</label>
+                    <input type="radio" /> <label> {item.option.second}</label>
+                    <input type="radio" /> <label> {item.option.third}</label>
+                    <input type="radio" /> <label> {item.option.forth}</label>
+                  </div>
                 </div>
-                </div>
-                <div className="blankdiv"></div>
-                
-                <div className="saveButton">
-                    <button className="buttonquizsave">save</button>
-                </div>
-
+              </div>
+              <div className="blankdivPlay"></div>
             </div>
-
-
-        </div>
+          </div>
+        );
+      })} 
     </>
-  )
+  );
 }

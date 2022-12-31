@@ -9,7 +9,7 @@ export default function Navbar() {
                 src="https://png.pngtree.com/png-clipart/20210418/original/pngtree-quiz-logo-icon-vector-png-image_6234100.jpg"
                 />
                 <div className="navbutton">
-                    <Link href="../index">
+                    <Link href="/">
                     <button className="buttonNav">Home</button>
                     </Link>
                     <Link href="../login">
