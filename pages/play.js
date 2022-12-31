@@ -12,7 +12,7 @@ export default function Home() {
                 src="https://i.pinimg.com/originals/0d/dc/ca/0ddccae723d85a703b798a5e682c23c1.png"
                 />
             </div>
-        </div>
+     </div>
 
         <div className="Baner"
         style={{
@@ -40,8 +40,12 @@ export default function Home() {
             </div>
         </div>
 
-        <div className="question_div">
-            <div className="button1">
+        
+
+        <div className="mainquizdiv">
+            
+            <div className="quizDiv">
+                <div className="quizfirst1">
                 <div>
                     <div className="question">
                         <span>What is your name?</span>
@@ -56,10 +60,16 @@ export default function Home() {
                     <button className="button_student">Student</button>
                     </div>
                 </div>
+                </div>
+                <div className="blankdiv"></div>
                 
-                
-                
+                <div className="saveButton">
+                    <button className="buttonquizsave">save</button>
+                </div>
+
             </div>
+
+
         </div>
     </>
   )

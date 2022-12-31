@@ -4,7 +4,12 @@ const QuestionSchema = new mongoose.Schema({
     createdBy:{type: mongoose.Schema.Types.ObjectId, ref: "User", default: null, require: [true, "please add created by"]},
     question1:{
         question:{type:String, require: [true, "please add question"]},
-        option:[{type:String, require: [true, "please add option"]}],
+        option:{
+            first:{type:String, require: [true, "please add option"]},
+            second:{type:String, require: [true, "please add option"]},
+            third:{type:String, require: [true, "please add option"]},
+            forth:{type:String, require: [true, "please add option"]}
+        },
         answer:{type:String, require: [true, "please add anser"]},
         difficultyLevel:{type:Number, require: [true, "please add anser"]},
 

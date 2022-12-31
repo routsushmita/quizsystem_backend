@@ -150,6 +150,35 @@ a {
 
 }
 
+.navbutton{
+  /* background-color: white; */
+  height:40px;
+  margin-left:70%;
+  width:40%;
+  border-radius: 2px;
+  border-width: 5px;
+  padding-top: 3px;
+}
+
+.buttonNav{
+  margin-left: 20px;
+  margin-right: 2px;
+  margin-top: 3px;
+  font-size: large;
+  font-weight: bold;
+  border-width: 0;
+  width: 20%;
+  height: 30px;
+  background-color: rgb(28, 8, 251);
+  
+}
+
+.buttonNav:hover{
+  color: white;
+  background-color: #a275cd;
+  transition:all 0.2s;
+}
+
 /* banner */
 
 .Baner{
@@ -453,4 +482,70 @@ transition:all 0.2s;
 .Llink1{
   color: white;
     text-decoration: none;
+}
+
+/* createQuiz */
+
+.quizDiv{
+  padding: 20px 70px 20px 20px;
+  margin: 100px 80px 30px 90px;
+  background-image: linear-gradient(
+    rgb(9, 34, 74),white,rgb(21, 39, 85)
+  );
+}
+
+.quizfirst1{
+  background-color: rgb(80, 131, 152);
+  padding: 30px 30px 30px 30px;
+  width: 103%;
+  border-width: 0px;
+  border-radius: 10px;
+}
+
+.quizfirst2{
+  background-color: rgb(207, 90, 81);
+  padding: 30px;
+  width: 103%;
+  border-width: 0px;
+  border-radius: 10px;
+}
+
+.blankdiv{
+  height: 40px;
+}
+
+.createQuizinput{
+  height: 30px;
+  border-radius: 10px;
+  border-width: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.buttonquizsave{
+  width: 30%;
+  height: 50px;
+  margin-left: 35%;
+  font-size: 30px;
+  font-weight: 100;
+  border-radius: 10px;
+  border-width: 0;
+  background-image: linear-gradient(
+    rgb(22, 147, 97),
+    white,
+    rgb(22, 147, 97)
+  );
+}
+
+.buttonquizsave:hover{
+  color: rgb(95, 232, 10);
+  background-image: linear-gradient(
+    green,white,green
+  );
+  transition:all 0.2s;
+}
+
+.mainquizdiv{
+  padding: 10px;
+  background-color: #000;
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Navbar from "./components/navbar";
 import '../styles/nav.module.css'
 
 export default function Home() {
@@ -21,18 +22,7 @@ export default function Home() {
     },[])
     return (
       <>
-      <div className="nav nav_black">
-            <div className="nav_contents">
-                <img 
-                className="nav_logo" 
-                src="https://png.pngtree.com/png-clipart/20210418/original/pngtree-quiz-logo-icon-vector-png-image_6234100.jpg"
-                />
-                <img 
-                className="nav_avtar" 
-                src="https://i.pinimg.com/originals/0d/dc/ca/0ddccae723d85a703b798a5e682c23c1.png"
-                />
-            </div>
-        </div>
+      <Navbar/>
 
         <div className="Baner"
         style={{

@@ -1,5 +1,5 @@
-
 import React, { useEffect, useState } from "react";
+import Navbar from "./components/navbar";
 import '../styles/nav.module.css'
 import Link from 'next/link';
 
@@ -23,18 +23,7 @@ export default function Home() {
     },[])
     return (
       <>
-      <div className="nav nav_black">
-            <div className="nav_contents">
-                <img 
-                className="nav_logo" 
-                src="https://png.pngtree.com/png-clipart/20210418/original/pngtree-quiz-logo-icon-vector-png-image_6234100.jpg"
-                />
-                <img 
-                className="nav_avtar" 
-                src="https://i.pinimg.com/originals/0d/dc/ca/0ddccae723d85a703b798a5e682c23c1.png"
-                />
-            </div>
-        </div>
+      <Navbar/>
 
         <div className="Baner"
         style={{
@@ -45,8 +34,16 @@ export default function Home() {
             <div className="banner_contents">
                 <h1 className="banner_title">Quiz Time</h1>
                 <div className="banner_buttons">
-                    <button className="banner_button">Play</button>
-                    <button className="banner_button">Create</button>
+                  <Link href="play">
+                  <button className="banner_button">Play</button>
+                  </Link>
+                    
+                    <Link href="/createquiz">
+                      <button className="banner_button">
+                      Create
+                      </button>
+                    </Link>
+                    
                 </div>
                 <h1 className="banner_description">
                     {truncate(`This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description.`
