@@ -17,8 +17,21 @@ export default async function  handler(req, res) {
       
     }
 
-    if (req.method === "GET") {
-       const Ques2 = await Question.find()
+    if (req.method === "GET" && req.query.type==="getQuestionIdList") {
+      const Ques2 = await Question.find({},{_id:1})
+      console.log(Ques2,"Ques2")
+      res.status(200).json(Ques2)
+   }
+
+    if (req.method === "GET" && req.query.type==="questionlist") {
+       const Ques2 = await Question.find({})
+       console.log(Ques2,"Ques2")
        res.status(200).json(Ques2)
     }
+
+    if (req.method === "GET" && req.query.type==="questionlistById") {
+      const Ques2 = await Question.find({_id:req.query._id})
+      console.log(Ques2,"Ques2")
+      res.status(200).json(Ques2)
+   }
   }

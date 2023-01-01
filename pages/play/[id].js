@@ -1,7 +1,7 @@
-import Navbar from "./components/navbar";
+import Navbar from "../components/navbar";
 import {useRouter} from "next/router"
 import React, { useState, useEffect } from "react";
-import '../styles/play.module.css'
+import '../../styles/play.module.css'
 
 export default function Home() {
   const router = useRouter();
@@ -34,7 +34,7 @@ export default function Home() {
     PostData();
   }, []);
   const PostData = async () => {
-    const res = await fetch("/api/question?type=questionlist", {
+    const res = await fetch(`/api/question??type=questionlistById&_id=${id}`, {
       method: "get",
       headers: {
         "Content-Type": "application/json",

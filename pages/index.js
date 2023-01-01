@@ -34,7 +34,7 @@ export default function Home() {
             <div className="banner_contents">
                 <h1 className="banner_title">Quiz Time</h1>
                 <div className="banner_buttons">
-                  <Link href="play">
+                  <Link href="quizList">
                   <button className="banner_button">Play</button>
                   </Link>
                     

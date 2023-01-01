@@ -582,3 +582,36 @@ transition:all 0.2s;
   font-size: 20px;
   padding-top: 5px;
 }
+
+/* quizlist */
+
+.quizlistmain{
+  background-color: skyblue;
+  height: 680px;
+  margin-top: 73px;
+  padding: 30px;
+}
+
+.quizlistHead{
+  background-color: blueviolet;
+  width: 30%;
+  border-radius: 20px;
+  margin-left: 35%;
+  padding-left: 10%;
+  color: white;
+  height: 50px;
+}
+
+.quizlist{
+  background-image: linear-gradient(
+   rgb(23, 23, 139), rgb(81, 81, 150),rgb(59, 161, 212),blue
+  );
+  height: 40px;
+  border: 0;
+  border-radius: 5px;
+  width: 50%;
+  color: white;
+  padding:8px;
+  margin-top: 20px;
+  margin-left: 25%;
+}
