@@ -82,9 +82,6 @@ export default function CreateQuiz() {
   let name, value;
 
   const handleInputs = (e) => {
-    console.log(e, "e===");
-    console.log(e.target.name, "e.target.name===");
-    console.log(e.target.value, "e.target.value===");
     name = e.target.name;
     value = e.target.value;
 
@@ -92,7 +89,6 @@ export default function CreateQuiz() {
   };
 
   const PostData = async (e) => {
-    console.log();
     e.preventDefault();
 
     const {
@@ -301,7 +297,6 @@ export default function CreateQuiz() {
     }
   };
 
-  console.log(user, "user========");
   return (
     <>
       <div className="mainquizdiv">

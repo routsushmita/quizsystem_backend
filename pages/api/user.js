@@ -8,7 +8,7 @@ export default async function handler(req, res) {
   if (req.method === "POST") {
     const data = req.body;
     data.addedOn;
-    console.log(data, "data==");
+   
     try {
       const checkUser = await User.find({ email: data.email });
       if (checkUser[0]) {

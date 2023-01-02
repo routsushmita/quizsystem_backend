@@ -7,7 +7,7 @@ import Cookies from "js-cookie";
 export default function Home() {
   const router = useRouter();
   const id = router.query.id;
-  console.log(id, "===========");
+  
   const [marks, setmarks] = useState(0);
   const [attempt, setAttempt] = useState(0);
   const [question, setquestion] = useState();
@@ -19,11 +19,11 @@ export default function Home() {
 
   const { selectedAnswer } = option;
 
-  console.log(marks, "marks------");
+  
   let name, value;
 
   const handleInputs = (e) => {
-    console.log(e);
+    
     name = e.target.name;
     value = e.target.value;
     setOption({ ...option, [name]: value });
@@ -41,14 +41,14 @@ export default function Home() {
         authorization: `bearer ${token}`,
       },
     });
-    // console.log(res.body, "res============");
+    
     const data = await res.json();
     if (!res) {
       setquestion([]);
     } else {
       setquestion(data[0].question);
     }
-    // console.log(data, "data34========");
+    
   };
 
   async function funLost() {
@@ -59,7 +59,7 @@ export default function Home() {
 
   async function funEnd(){
     let num=question.length
-    console.log(num,"num-----",attempt)
+    
     if(attempt==num-1){
       window.alert(`all question exhausted `);
       router.push("http://localhost:3000/teacher");
@@ -140,13 +140,13 @@ export default function Home() {
                       value="SUBMIT"
                       onClick={function () {
                         if (selectedAnswer === item.answer) {
-                          console.log("jeete");
+                          
                           setmarks(marks + 5);
                           setAttempt(attempt + 1);
                           funEnd()
                         }
                         if (selectedAnswer !== item.answer) {
-                          console.log("hare");
+                          
                           setmarks(marks - 2);
                           setAttempt(attempt + 1);
                           funLost();

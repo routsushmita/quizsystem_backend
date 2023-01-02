@@ -9,7 +9,7 @@ const authenticate = async (req, res, next) => {
     return "INVALID TOKEN";
   }
   let decoded = JWTService.decodeJWT(token[1]);
-  console.log(decoded);
+  
   if (!decoded) {
     return "INVALID TOKEN";
   }

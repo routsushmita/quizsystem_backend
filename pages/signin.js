@@ -13,7 +13,7 @@ export default function Home() {
 let name, value;
 
 const handleInputs = (e) =>{
-    console.log(e);
+    
     name=e.target.name;
     value = e.target.value;
 
@@ -21,11 +21,15 @@ const handleInputs = (e) =>{
 }
 
 const PostData =async(e)=>{
-    console.log()
+    
     e.preventDefault();
 
     const{name,email,phone,address,role}=user;
-    const res = await fetch("/api/user",{
+    if(email==="" && role===""){
+        window.alert("Enter the required field")
+    }
+    else{
+        var res = await fetch("/api/user",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -33,10 +37,19 @@ const PostData =async(e)=>{
         body:JSON.stringify({
             name,email,phone,address,role
         })
-    })
 
-    const data=await res.json();
-    if(data){
+    })
+    var data=await res.json();
+    }
+
+    
+    if(data==="User Already exist"){
+        window.alert("User Already exist")
+    }
+    else if(!data){
+        console.log("nodata")
+    }
+    else{
         window.alert("Signin successfully, Please Login now")
         if(data.role === "admin"){
             router.push("http://localhost:3000/login")
@@ -46,10 +59,10 @@ const PostData =async(e)=>{
         }
         
     }
-    console.log(data,"data")
+    
 }
 
-console.log(user,"user========")
+
     return (
       <>
       <div className="Sdiv1">

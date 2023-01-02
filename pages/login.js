@@ -15,7 +15,7 @@ const router=useRouter();
 let name, value;
 
 const handleInputs = (e) =>{
-    console.log(e);
+    
     name=e.target.name;
     value = e.target.value;
 
@@ -23,11 +23,11 @@ const handleInputs = (e) =>{
 }
 
 const PostData =async(e)=>{
-    console.log()
+    
     e.preventDefault();
 
     const{email}=user;
-    console.log("email=====",email)
+    
     const res = await fetch(`/api/user?type=login&email=${email}`,{
         method:"get",
         headers:{
@@ -35,7 +35,7 @@ const PostData =async(e)=>{
             "authorization":"bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiYzdAZ21haWwuY29tIiwiaWF0IjoxNjcyNTY5NjExLCJleHAiOjE2NzI2NTYwMTF9.7mYp5bSH2nu_dxyuCFfpJR6KFFut6PzUC4oy8V_MVUg"
         }
     })
-    console.log(res,"res===========")
+    
     const data=await res.json();
 
     if (!res) {
@@ -43,27 +43,27 @@ const PostData =async(e)=>{
     } else {
       setUser(data);
     }
-    console.log(data, "data========");
+    
 
     if(data.response==="You do not have account with us , Please Signin"){
         window.alert("Please signIn")
     }
     // if(data[0].role){
-      console.log("inside==============",data.response.role)
+      
       if(data.response.role==="admin"){
-        console.log("admin")
+        
         Cookies.set("token",data.sessionToken);
         router.push("http://localhost:3000/teacher")
       }
       else if(data.response.role==="student"){
-        console.log("student")
+        
         Cookies.set("token",data.sessionToken);
         router.push("http://localhost:3000/student")
       }
       
 }
 
-console.log(user,"user========")
+
 
     return (
       <>
