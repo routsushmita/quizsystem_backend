@@ -4,10 +4,6 @@ import "../styles/nav.module.css";
 import Link from "next/link";
 
 export default function Home() {
-  function truncate(string, n) {
-    return string?.length > n ? string.substr(0, n - 1) + "..." : string;
-  }
-  
   return (
     <>
       <Navbar />
@@ -22,13 +18,12 @@ export default function Home() {
       >
         <div className="banner_contents">
           <h1 className="banner_title">Quiz Time</h1>
-          <div className="banner_buttons"></div>
-          <h1 className="banner_description">
-            {truncate(
-              `Hello learners.... We are here to provide you knowledge for boasting your mind.Join us to have great quizSession with us... `,
-              150
-            )}
-          </h1>
+          <div className="banner_buttons">
+            <Link href="quizList">
+              <button className="banner_button">Play</button>
+            </Link>
+          </div>
+          <h1 className="banner_description"></h1>
           <div className="banner--fadebotton" />
         </div>
       </div>
@@ -39,8 +34,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="button_div">
-        <div className="button1">
+      <div className="button_div ">
+        <div className="button1 student">
           <div>
             <img
               className="student_img"
@@ -48,21 +43,8 @@ export default function Home() {
             />
           </div>
           <div>
-            <Link href="/student">
-              <button className="button_student">Student</button>
-            </Link>
-          </div>
-        </div>
-        <div className="button2">
-          <div>
-            <img
-              className="teacher_logo"
-              src="https://storage.googleapis.com/assets.thehindustep.in/img%2Fproducts%2Fback_img%2F450.png"
-            />
-          </div>
-          <div>
-            <Link href="/teacher">
-              <button className="button_teacher">Teacher</button>
+            <Link href="/signin">
+              <button className="button_student">Register Here</button>
             </Link>
           </div>
         </div>

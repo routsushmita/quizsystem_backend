@@ -153,16 +153,16 @@ a {
 .navbutton{
   /* background-color: white; */
   height:40px;
-  margin-left:70%;
-  width:40%;
+  margin-left:60%;
+  width:50%;
   border-radius: 2px;
-  border-width: 5px;
+  border-width: 0px;
   padding-top: 3px;
 }
 
 .buttonNav{
-  margin-left: 20px;
-  margin-right: 2px;
+  margin-left: 10px;
+  margin-right: 0px;
   margin-top: 3px;
   font-size: large;
   font-weight: bold;
@@ -170,6 +170,7 @@ a {
   width: 20%;
   height: 30px;
   background-color: rgb(28, 8, 251);
+  border-radius: 2px;
   
 }
 
@@ -614,4 +615,39 @@ transition:all 0.2s;
   padding:8px;
   margin-top: 20px;
   margin-left: 25%;
+}
+
+.teacher{
+  margin-right: 25%;
+}
+
+.student{
+ margin-left: 40%;
+}
+
+.tregister{
+  width: 60%;
+}
+
+.scoreBoard{
+  position: fixed;
+  height:100px;
+  width:50%;
+  margin-top:0px;
+  background-image: linear-gradient(
+    rgb(9, 34, 74),rgb(27, 2, 2),rgb(21, 39, 85)
+  );
+  margin-left: 25%;
+}
+
+.scoreBoardmain{
+  background-color: rgb(154, 118, 118);
+  padding: 20px;
+}
+
+.score{
+  font-size: 40px;
+  margin-left: 25%;
+  padding-top: 10px;
+  color: white;
 }

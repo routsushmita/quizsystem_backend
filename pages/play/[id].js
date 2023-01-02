@@ -1,59 +1,60 @@
 import Navbar from "../components/navbar";
-import {useRouter} from "next/router"
-import React, { useState, useEffect } from "react";
-import '../../styles/play.module.css'
+import { useRouter } from "next/router";
+import React, { useState, useEffect, useRef } from "react";
+import "../../styles/play.module.css";
+import Cookies from "js-cookie";
 
 export default function Home() {
   const router = useRouter();
-  const id = router.query.id
-  console.log(id,"===========")
-  const [marks,setmarks]=useState(0);
+  const id = router.query.id;
+  console.log(id, "===========");
+  const [marks, setmarks] = useState(0);
+  const [attempt, setAttempt] = useState(0);
   const [question, setquestion] = useState();
-  const [answer,setAnswer] = useState("");
-  const [option,setOption] = useState({
-    selectedAnswer:""
+  const [answer, setAnswer] = useState("");
+  const [show, setShow] = useState(false);
+  const [option, setOption] = useState({
+    selectedAnswer: "",
   });
 
-  const {
-    selectedAnswer
-  } = option
+  const { selectedAnswer } = option;
 
-  console.log(marks,"marks------")
+  console.log(marks, "marks------");
   let name, value;
 
-  const handleInputs = (e) =>{
+  const handleInputs = (e) => {
     console.log(e);
-    name=e.target.name;
+    name = e.target.name;
     value = e.target.value;
-    setOption({...option, [name]:value});
-}
+    setOption({ ...option, [name]: value });
+  };
 
-  
-  console.log(option,"option=======")
   useEffect(() => {
     PostData();
   }, []);
   const PostData = async () => {
-    const res = await fetch(`/api/question??type=questionlistById&_id=${id}`, {
+    let token = Cookies.get("token");
+    const res = await fetch(`/api/question?type=questionlistById&_id=${id}`, {
       method: "get",
       headers: {
         "Content-Type": "application/json",
+        authorization: `bearer ${token}`,
       },
     });
-    console.log(res.body, "res============");
+    // console.log(res.body, "res============");
     const data = await res.json();
     if (!res) {
       setquestion([]);
     } else {
       setquestion(data[0].question);
     }
-    console.log(data, "data34========");
+    // console.log(data, "data34========");
   };
 
-  async function funLost(){
-    let marks1=await marks
+  async function funLost() {
+    let marks1 = await marks;
     window.alert(`you Lost with marks ${marks1}`);
-    location.reload();
+    router.push("http://localhost:3000/teacher");
   }
 
   return (
@@ -74,6 +75,14 @@ export default function Home() {
           <span className="moving_Heading">Welcome to Quiz Center</span>
         </div>
       </div>
+      <div className="scoreBoardmain">
+        <div className="scoreBoard">
+          <div className="score">
+            Attempt= {attempt} Score= {marks}
+          </div>
+          <div className="score"></div>
+        </div>
+      </div>
 
       {question?.map((item, index) => {
         return (
@@ -85,25 +94,64 @@ export default function Home() {
                     <span>{item.question}</span>
                   </div>
                   <div className="optionPlay">
-                    <input type="radio" onChange={handleInputs} name="selectedAnswer" value={item.option.first}/> <label> {item.option.first}</label>
-                    <input type="radio" onChange={handleInputs} name="selectedAnswer" value={item.option.second}/> <label> {item.option.second}</label>
-                    <input type="radio" onChange={handleInputs} name="selectedAnswer" value={item.option.third}/> <label> {item.option.third}</label>
-                    <input type="radio" onChange={handleInputs} name="selectedAnswer" value={item.option.forth}/> <label> {item.option.forth}</label>
+                    <input
+                      type="radio"
+                      onChange={handleInputs}
+                      name="selectedAnswer"
+                      value={item.option.first}
+                    />{" "}
+                    <label> {item.option.first}</label>
+                    <input
+                      type="radio"
+                      onChange={handleInputs}
+                      name="selectedAnswer"
+                      value={item.option.second}
+                    />{" "}
+                    <label> {item.option.second}</label>
+                    <input
+                      type="radio"
+                      onChange={handleInputs}
+                      name="selectedAnswer"
+                      value={item.option.third}
+                    />{" "}
+                    <label> {item.option.third}</label>
+                    <input
+                      type="radio"
+                      onChange={handleInputs}
+                      name="selectedAnswer"
+                      value={item.option.forth}
+                    />{" "}
+                    <label> {item.option.forth}</label>
                   </div>
                   <div className="answerButton">
-                    <input className="answerButton1" type="submit" name="answer" value="SUBMIT" onClick={function(){
-                      if(selectedAnswer===item.answer){
-                        console.log("jeete")
-                        setmarks(marks+5)
-                      }
-                      if(selectedAnswer!==item.answer){
-                        console.log("hare")
-                        setmarks(marks-2)
-                        funLost()
-                      }
-                  
-                      console.log(marks,"pppppppp",selectedAnswer,"selectedAnswer",item.answer,"oooooo")
-                    }}/>
+                    <input
+                      className="answerButton1"
+                      type="submit"
+                      name="answer"
+                      value="SUBMIT"
+                      onClick={function () {
+                        if (selectedAnswer === item.answer) {
+                          console.log("jeete");
+                          setmarks(marks + 5);
+                          setAttempt(attempt + 1);
+                        }
+                        if (selectedAnswer !== item.answer) {
+                          console.log("hare");
+                          setmarks(marks - 2);
+                          setAttempt(attempt + 1);
+                          funLost();
+                        }
+
+                        console.log(
+                          marks,
+                          "pppppppp",
+                          selectedAnswer,
+                          "selectedAnswer",
+                          item.answer,
+                          "oooooo"
+                        );
+                      }}
+                    />
                   </div>
                 </div>
               </div>
@@ -111,7 +159,7 @@ export default function Home() {
             </div>
           </div>
         );
-      })} 
+      })}
     </>
   );
 }

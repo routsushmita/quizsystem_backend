@@ -2,9 +2,10 @@ import React,{useState} from "react";
 import '../styles/signin.module.css';
 import Link from 'next/link';
 import Navbar from "./components/navbar";
+import {useRouter} from "next/router"
 
 export default function Home() {
-
+    const router = useRouter();
   const [user,setUser]=useState({
     name:"",email:"",phone:"",address:"",role:""
 })
@@ -35,11 +36,17 @@ const PostData =async(e)=>{
     })
 
     const data=await res.json();
-
-    if(data.responseCode==="OK"){
-        window.alert("data registered successfully")
-        console.log("data registered successfully")
+    if(data){
+        window.alert("Signin successfullt")
+        if(data.role === "admin"){
+            router.push("http://localhost:3000/teacher")
+        }
+        if(data.role === "student"){
+            router.push("http://localhost:3000/student")
+        }
+        
     }
+    console.log(data,"data")
 }
 
 console.log(user,"user========")

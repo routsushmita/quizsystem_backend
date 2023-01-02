@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/navbar";
-import '../styles/nav.module.css'
+import '../styles/nav.module.css';
+import Link from 'next/link';
 
 export default function Home() {
     function truncate(string,n){
@@ -33,11 +34,15 @@ export default function Home() {
             <div className="banner_contents">
                 <h1 className="banner_title">Quiz Time</h1>
                 <div className="banner_buttons">
-                    <button className="banner_button">Play</button>
-                    <button className="banner_button">Create</button>
+                    {/* <button className="banner_button">Play</button> */}
+                    <Link href="/createquiz">
+                      <button className="banner_button">
+                      Create
+                      </button>
+                    </Link>
                 </div>
                 <h1 className="banner_description">
-                    {truncate(`This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description. This is banner description.`
+                    {truncate(``
                     ,150) } 
                 </h1>
                 <div className="banner--fadebotton"/>
@@ -51,7 +56,7 @@ export default function Home() {
         </div>
 
         <div className="button_div">
-            <div className="button1">
+            {/* <div className="button1">
                 <div>
                 <img 
                 className="student_img" 
@@ -63,8 +68,8 @@ export default function Home() {
                 </div>
                 
                 
-            </div>
-            <div className="button2">
+            </div> */}
+            <div className="button2 teacher">
                 <div>
                 <img 
                 className="teacher_logo" 
@@ -72,8 +77,11 @@ export default function Home() {
                 />
                 </div>
                 <div>
-                <button className="button_teacher">Teacher</button>
+                <Link href="/signin">
+                <button className="button_teacher tregister">Register Here</button>
+                </Link>
                 </div>
+                
                 
                 
             </div>

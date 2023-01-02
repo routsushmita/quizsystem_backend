@@ -2,24 +2,30 @@ import React ,{ useState, useEffect } from "react";
 import Navbar from "./components/navbar";
 import "../styles/quizList.module.css";
 import Link from "next/link";
-
+import Cookies from 'js-cookie';
 
 export default function Home() {
+  
   const [questionLink, setquestionLink] = useState();
   useEffect(() => {
+    let cookies=Cookies.get()
+    // console.log(cookies,"===========")
     PostData();
   }, []);
-  const PostData = async () => {
+  const PostData = async (req) => {
+    let token = Cookies.get("token");
+     console.log(`bearer ${token}`,"verify==========",typeof token)
     const res = await fetch("/api/question?type=getQuestionIdList", {
       method: "get",
       headers: {
         "Content-Type": "application/json",
+        "authorization":`bearer ${token}`
       },
     });
     //console.log(res.body, "res============");
     const data = await res.json();
     if (!res) {
-      setquestionLink([]);
+      setquestionLink(["No data found"]);
     } else {
       setquestionLink(data);
     }

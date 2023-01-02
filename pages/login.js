@@ -1,10 +1,13 @@
+import Cookies from 'js-cookie';
 import '../styles/login.module.css';
 import Link from 'next/link';
 import Navbar from './components/navbar';
 import React,{useState} from "react";
+import { COOKIE_NAME_PRERENDER_BYPASS } from 'next/dist/server/api-utils';
+import { Router, useRouter } from 'next/router';
 
 export default function Home() {
-
+const router=useRouter();
   const [user,setUser]=useState({
     email:"",phone:""
 })
@@ -24,6 +27,7 @@ const PostData =async(e)=>{
     e.preventDefault();
 
     const{email}=user;
+    console.log("email=====",email)
     const res = await fetch(`/api/user?type=login&email=${email}`,{
         method:"get",
         headers:{
@@ -41,12 +45,22 @@ const PostData =async(e)=>{
     }
     console.log(data, "data========");
 
-    if(data==="You do not have account with us , Please Signin"){
+    if(data.response==="You do not have account with us , Please Signin"){
         window.alert("Please signIn")
     }
-    else{
-      window.location.replace('http://localhost:3000/')
-    }
+    // if(data[0].role){
+      console.log("inside==============",data.response.role)
+      if(data.response.role==="admin"){
+        console.log("admin")
+        Cookies.set("token",data.sessionToken);
+        router.push("http://localhost:3000/teacher")
+      }
+      else if(data.response.role==="student"){
+        console.log("student")
+        Cookies.set("token",data.sessionToken);
+        router.push("http://localhost:3000/student")
+      }
+      
 }
 
 console.log(user,"user========")
