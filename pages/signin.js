@@ -37,12 +37,12 @@ const PostData =async(e)=>{
 
     const data=await res.json();
     if(data){
-        window.alert("Signin successfullt")
+        window.alert("Signin successfully, Please Login now")
         if(data.role === "admin"){
-            router.push("http://localhost:3000/teacher")
+            router.push("http://localhost:3000/login")
         }
         if(data.role === "student"){
-            router.push("http://localhost:3000/student")
+            router.push("http://localhost:3000/login")
         }
         
     }
