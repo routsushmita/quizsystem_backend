@@ -52,9 +52,18 @@ export default function Home() {
   };
 
   async function funLost() {
-    let marks1 = await marks;
-    window.alert(`you Lost with marks ${marks1}`);
+    // let marks1 = await marks;
+    window.alert(`you Lost `);
     router.push("http://localhost:3000/teacher");
+  }
+
+  async function funEnd(){
+    let num=question.length
+    console.log(num,"num-----",attempt)
+    if(attempt==num-1){
+      window.alert(`all question exhausted `);
+      router.push("http://localhost:3000/teacher");
+    }
   }
 
   return (
@@ -134,6 +143,7 @@ export default function Home() {
                           console.log("jeete");
                           setmarks(marks + 5);
                           setAttempt(attempt + 1);
+                          funEnd()
                         }
                         if (selectedAnswer !== item.answer) {
                           console.log("hare");
@@ -142,14 +152,6 @@ export default function Home() {
                           funLost();
                         }
 
-                        console.log(
-                          marks,
-                          "pppppppp",
-                          selectedAnswer,
-                          "selectedAnswer",
-                          item.answer,
-                          "oooooo"
-                        );
                       }}
                     />
                   </div>
