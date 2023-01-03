@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import "../styles/createquiz.module.css";
 import Link from "next/link";
 import Cookies from 'js-cookie';
+import { Router, useRouter } from 'next/router';
 
 export default function CreateQuiz() {
   const router = useRouter();

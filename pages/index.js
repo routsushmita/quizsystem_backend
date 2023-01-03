@@ -3,8 +3,10 @@ import React, { useEffect, useState } from "react";
 import "../styles/nav.module.css";
 import Link from "next/link";
 import Cookies from 'js-cookie';
+import { Router, useRouter } from 'next/router';
 
 export default function Home() {
+  const router = useRouter();
   function truncate(string, n) {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   }

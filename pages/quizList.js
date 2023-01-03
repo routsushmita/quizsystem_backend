@@ -3,9 +3,10 @@ import React ,{ useState, useEffect } from "react";
 import "../styles/quizList.module.css";
 import Link from "next/link";
 import Cookies from 'js-cookie';
+import { Router, useRouter } from 'next/router';
 
 export default function Home() {
-  
+  const router = useRouter();
   const [questionLink, setquestionLink] = useState();
   useEffect(() => {
     var cookies=Cookies.get()
