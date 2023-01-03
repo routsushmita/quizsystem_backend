@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React, { useState, useEffect, useRef } from "react";
 import "../../styles/play.module.css";
 import Cookies from "js-cookie";
+import Link from "next/link";
 
 export default function Home() {
   const router = useRouter();

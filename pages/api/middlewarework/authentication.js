@@ -1,7 +1,7 @@
 import JWTService from "../services/jwt";
 
 const authenticate = async (req, res, next) => {
-  console.log(req);
+  // console.log(req);
   const bearerToken = req.headers["authorization"];
   if (!bearerToken) return "INVALID TOKEN";
   const token = bearerToken.split(" ");

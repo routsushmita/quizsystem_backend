@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 // import Navbar from "./navbar";
 import "../styles/createquiz.module.css";
+import Link from "next/link";
 
 export default function CreateQuiz() {
   const router = useRouter();
