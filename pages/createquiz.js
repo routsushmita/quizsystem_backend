@@ -291,7 +291,7 @@ export default function CreateQuiz() {
 
     if (data) {
       window.alert("Quiz created successfully");
-      router.push("http://localhost:3000/createQuiz");
+      router.push("https://charming-marshmallow-c73595.netlify.app/createQuiz");
     }
     if (!data) {
       window.alert("Quiz Not created");
@@ -325,7 +325,7 @@ export default function CreateQuiz() {
               onClick={function () {
                 Cookies.set("token", "");
                 window.alert("You are logout Of the portal");
-                router.push("http://localhost:3000/login");
+                router.push("https://charming-marshmallow-c73595.netlify.app/login");
               }}
             >
               Logout

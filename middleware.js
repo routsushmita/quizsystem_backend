@@ -7,16 +7,16 @@ export default function middleware(req){
     let url = req.url
     
     if(!verify && url.includes(['/play/[id]'])){
-        return NextResponse.redirect("http://localhost:3000/");
+        return NextResponse.redirect("https://charming-marshmallow-c73595.netlify.app/");
     }
     if(!verify && url.includes(['/quizList'])){
-        return NextResponse.redirect("http://localhost:3000/");
+        return NextResponse.redirect("https://charming-marshmallow-c73595.netlify.app/");
     }
     if(!verify && url.includes(['/createquiz'])){
-        return NextResponse.redirect("http://localhost:3000/");
+        return NextResponse.redirect("https://charming-marshmallow-c73595.netlify.app/");
     }
     if(!verify && url.includes(['/play'])){
-        return NextResponse.redirect("http://localhost:3000/");
+        return NextResponse.redirect("https://charming-marshmallow-c73595.netlify.app/");
     }
 
     // if (verify) {

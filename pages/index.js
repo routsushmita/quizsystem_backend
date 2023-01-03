@@ -34,7 +34,7 @@ export default function Home() {
               onClick={function () {
                 Cookies.set("token", "");
                 window.alert("You are logout Of the portal");
-                router.push("http://localhost:3000/login");
+                router.push("https://charming-marshmallow-c73595.netlify.app/login");
               }}
             >
               Logout

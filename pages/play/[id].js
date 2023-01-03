@@ -55,7 +55,7 @@ export default function Home() {
   async function funLost() {
     // let marks1 = await marks;
     window.alert(`you Lost `);
-    router.push("http://localhost:3000/teacher");
+    router.push("https://charming-marshmallow-c73595.netlify.app/teacher");
   }
 
   async function funEnd(){
@@ -63,7 +63,7 @@ export default function Home() {
     
     if(attempt==num-1){
       window.alert(`all question exhausted `);
-      router.push("http://localhost:3000/teacher");
+      router.push("https://charming-marshmallow-c73595.netlify.app/teacher");
     }
   }
 
@@ -93,7 +93,7 @@ export default function Home() {
               onClick={function () {
                 Cookies.set("token", "");
                 window.alert("You are logout Of the portal");
-                router.push("http://localhost:3000/login");
+                router.push("https://charming-marshmallow-c73595.netlify.app/login");
               }}
             >
               Logout

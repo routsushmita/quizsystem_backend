@@ -52,10 +52,10 @@ const PostData =async(e)=>{
     else{
         window.alert("Signin successfully, Please Login now")
         if(data.role === "admin"){
-            router.push("http://localhost:3000/login")
+            router.push("https://charming-marshmallow-c73595.netlify.app/login")
         }
         if(data.role === "student"){
-            router.push("http://localhost:3000/login")
+            router.push("https://charming-marshmallow-c73595.netlify.app/login")
         }
         
     }
@@ -90,7 +90,7 @@ const PostData =async(e)=>{
               onClick={function () {
                 Cookies.set("token", "");
                 window.alert("You are logout Of the portal");
-                router.push("http://localhost:3000/login");
+                router.push("https://charming-marshmallow-c73595.netlify.app/login");
               }}
             >
               Logout

@@ -57,7 +57,7 @@ export default function Home() {
               onClick={function () {
                 Cookies.set("token", "");
                 window.alert("You are logout Of the portal");
-                router.push("http://localhost:3000/login");
+                router.push("https://charming-marshmallow-c73595.netlify.app/login");
               }}
             >
               Logout
@@ -80,7 +80,7 @@ export default function Home() {
         return (
           <div className="quizlist" key={index}>
           <span>* </span>
-          <Link href={`play/${item._id}`}>http://localhost:27017/{item._id}</Link>
+          <Link href={`play/${item._id}`}>https://charming-marshmallow-c73595.netlify.app/{item._id}</Link>
           </div>
         )})}
       
