@@ -25,6 +25,7 @@ export default function Home() {
     });
     
     const data = await res.json();
+    console.log(data,"==========")
     if (!res) {
       setquestionLink(["No data found"]);
     } else {
@@ -76,7 +77,7 @@ export default function Home() {
           <h1>Quiz List</h1>
         </div>
       </div>
-
+              {console.log(questionLink,"============")}
       {questionLink?.map((item, index) => {
         return (
           <div className="quizlist" key={index}>

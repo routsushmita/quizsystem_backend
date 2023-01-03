@@ -59,7 +59,7 @@ export default async function handler(req, res) {
         );
         return res.status(200).json({ response, sessionToken });
       }
-      return res.status(200).json(getUser, getUser[0].sessionToken);
+      return res.status(200).json({response:getUser[0], sessionToken:getUser[0].sessionToken});
     }
     if (getUser.length === 0) {
       res.status(200).json("You do not have account with us , Please Signin");

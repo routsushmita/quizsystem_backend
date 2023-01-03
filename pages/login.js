@@ -32,32 +32,32 @@ const PostData =async(e)=>{
         method:"get",
         headers:{
             "Content-Type":"application/json",
-            "authorization":"bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiYzdAZ21haWwuY29tIiwiaWF0IjoxNjcyNTY5NjExLCJleHAiOjE2NzI2NTYwMTF9.7mYp5bSH2nu_dxyuCFfpJR6KFFut6PzUC4oy8V_MVUg"
+            // "authorization":"bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiYzdAZ21haWwuY29tIiwiaWF0IjoxNjcyNTY5NjExLCJleHAiOjE2NzI2NTYwMTF9.7mYp5bSH2nu_dxyuCFfpJR6KFFut6PzUC4oy8V_MVUg"
         }
     })
     
     const data=await res.json();
-
+    console.log(data,"=========123")
     if (!res) {
       setUser([]);
     } else {
       setUser(data);
     }
-    
-    if(data[0]==="You do not have account with us , Please Signin"){
-        window.alert("Please signIn")
+    console.log(data,",==========)")
+    if(data==="You do not have account with us , Please Signin"){
+        window.alert("Please signIn first")
     }
     // if(data[0].role){
       
-      if(data[0].role==="admin"){
+      if(data.response.role==="admin"){
         
         Cookies.set("token",data.sessionToken);
         router.push("https://charming-marshmallow-c73595.netlify.app/teacher")
       }
-      else if(data[0].role==="student"){
+      else if(data.response.role==="student"){
         
         Cookies.set("token",data.sessionToken);
-        router.push("https://charming-marshmallow-c73595.netlify.app/student")
+         router.push("https://charming-marshmallow-c73595.netlify.app/student")
       }
       
 }

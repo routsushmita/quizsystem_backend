@@ -9,9 +9,9 @@ export default function middleware(req){
     if(!verify && url.includes(['/play/[id]'])){
         return NextResponse.redirect("https://charming-marshmallow-c73595.netlify.app/");
     }
-    if(!verify && url.includes(['/quizList'])){
-        return NextResponse.redirect("https://charming-marshmallow-c73595.netlify.app/");
-    }
+    // if(!verify && url.includes(['/quizList'])){
+    //     return NextResponse.redirect("https://charming-marshmallow-c73595.netlify.app/");
+    // }
     if(!verify && url.includes(['/createquiz'])){
         return NextResponse.redirect("https://charming-marshmallow-c73595.netlify.app/");
     }
