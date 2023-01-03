@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import Navbar from "./components/navbar";
+import Navbar from "./navbar";
 import "../styles/createquiz.module.css";
 
 export default function CreateQuiz() {

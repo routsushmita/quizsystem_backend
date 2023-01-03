@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie';
 import '../styles/login.module.css';
 import Link from 'next/link';
-import Navbar from './components/navbar';
+import Navbar from './navbar';
 import React,{useState} from "react";
 import { COOKIE_NAME_PRERENDER_BYPASS } from 'next/dist/server/api-utils';
 import { Router, useRouter } from 'next/router';

@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import '../styles/signin.module.css';
 import Link from 'next/link';
-import Navbar from "./components/navbar";
+import Navbar from "./navbar";
 import {useRouter} from "next/router"
 
 export default function Home() {

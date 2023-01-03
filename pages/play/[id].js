@@ -1,4 +1,4 @@
-import Navbar from "../components/navbar";
+import Navbar from "../Navbar";
 import { useRouter } from "next/router";
 import React, { useState, useEffect, useRef } from "react";
 import "../../styles/play.module.css";

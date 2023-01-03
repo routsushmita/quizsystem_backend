@@ -1,5 +1,5 @@
 import React ,{ useState, useEffect } from "react";
-import Navbar from "./components/navbar";
+import Navbar from "./Navbar";
 import "../styles/quizList.module.css";
 import Link from "next/link";
 import Cookies from 'js-cookie';
