@@ -44,18 +44,17 @@ const PostData =async(e)=>{
       setUser(data);
     }
     
-
-    if(data.response==="You do not have account with us , Please Signin"){
+    if(data[0]==="You do not have account with us , Please Signin"){
         window.alert("Please signIn")
     }
     // if(data[0].role){
       
-      if(data.response.role==="admin"){
+      if(data[0].role==="admin"){
         
         Cookies.set("token",data.sessionToken);
         router.push("https://charming-marshmallow-c73595.netlify.app/teacher")
       }
-      else if(data.response.role==="student"){
+      else if(data[0].role==="student"){
         
         Cookies.set("token",data.sessionToken);
         router.push("https://charming-marshmallow-c73595.netlify.app/student")
