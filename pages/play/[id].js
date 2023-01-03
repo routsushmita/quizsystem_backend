@@ -95,7 +95,7 @@ export default function Home() {
 
       {question?.map((item, index) => {
         return (
-          <div className="mainquizdivPlay">
+          <div className="mainquizdivPlay" key={index}>
             <div className="quizDivPlay">
               <div className="quizfirst1Play">
                 <div>

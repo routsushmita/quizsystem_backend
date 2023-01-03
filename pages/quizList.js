@@ -43,7 +43,7 @@ export default function Home() {
 
       {questionLink?.map((item, index) => {
         return (
-          <div className="quizlist">
+          <div className="quizlist" key={index}>
           <span>* </span>
           <Link href={`play/${item._id}`}>http://localhost:27017/{item._id}</Link>
           </div>
