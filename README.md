@@ -18,3 +18,6 @@ can create a QUIZ
 
 User can logout of portal using LOGOUT button on navbar
 -if user id logout routes are restricted 
+
+
+Important while signing UP Please put role(admin or student)

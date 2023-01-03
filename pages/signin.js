@@ -127,7 +127,7 @@ const PostData =async(e)=>{
                  placeholder="Enter your address " name="address"></input><br/>
                 <input className="sinput1" type="role" 
                 onChange={handleInputs} value={user.role}
-                 placeholder="Enter your role number" name="role"></input><br/>
+                 placeholder="Enter role(admin or student)" name="role"></input><br/>
                 <br/>
                 <button className="Sbutton3" type="submit"  value="register" 
                  onClick={PostData}
