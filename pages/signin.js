@@ -2,7 +2,8 @@ import React,{useState} from "react";
 import '../styles/signin.module.css';
 import Link from 'next/link';
 // import Navbar from "./navbar";
-import {useRouter} from "next/router"
+import {useRouter} from "next/router";
+import Cookies from 'js-cookie';
 
 export default function Home() {
     const router = useRouter();

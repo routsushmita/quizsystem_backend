@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 // import Navbar from "./navbar";
 import "../styles/createquiz.module.css";
 import Link from "next/link";
+import Cookies from 'js-cookie';
 
 export default function CreateQuiz() {
   const router = useRouter();
