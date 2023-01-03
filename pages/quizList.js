@@ -8,13 +8,13 @@ export default function Home() {
   
   const [questionLink, setquestionLink] = useState();
   useEffect(() => {
-    let cookies=Cookies.get()
+    var cookies=Cookies.get()
     
     PostData();
   }, []);
   const PostData = async (req) => {
     let token = Cookies.get("token");
-     
+     console.log(token,"------------")
     const res = await fetch("/api/question?type=getQuestionIdList", {
       method: "get",
       headers: {
